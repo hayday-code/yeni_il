@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<title>Yeni İl YolkasI</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #87CEEB;
+    text-align: center;
+    font-family: Arial;
+  }
+  canvas {
+    display: block;
+    margin: auto;
+  }
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas" width="600" height="600"></canvas>
+
+<h2>🎉 HAYDAY LÜKS Yönetim 🎉</h2>
+<h3>Yeni İl Bayramınızı Təbrik Edir!</h3>
+
+<script>
+const c = document.getElementById("canvas");
+const ctx = c.getContext("2d");
+
+/* ÇƏMƏN */
+ctx.fillStyle = "darkgreen";
+ctx.fillRect(0, 500, 600, 100);
+
+/* KÖK */
+ctx.fillStyle = "brown";
+ctx.fillRect(280, 430, 40, 70);
+
+/* YOLKA */
+ctx.fillStyle = "green";
+ctx.beginPath();
+ctx.moveTo(300, 120);
+ctx.lineTo(120, 430);
+ctx.lineTo(480, 430);
+ctx.closePath();
+ctx.fill();
+
+/* ULDUZ */
+ctx.fillStyle = "yellow";
+ctx.beginPath();
+ctx.moveTo(300, 90);
+for (let i = 0; i < 5; i++) {
+  ctx.lineTo(
+    300 + Math.cos((18 + i * 72) * Math.PI / 180) * 30,
+    90 - Math.sin((18 + i * 72) * Math.PI / 180) * 30
+  );
+  ctx.lineTo(
+    300 + Math.cos((54 + i * 72) * Math.PI / 180) * 12,
+    90 - Math.sin((54 + i * 72) * Math.PI / 180) * 12
+  );
+}
+ctx.closePath();
+ctx.fill();
+</script>
+
+</body>
+</html>
